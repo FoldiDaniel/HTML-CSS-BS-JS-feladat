@@ -15,100 +15,148 @@
 </head>
 
 <body>
-    <h1>Számítások</h1>
-    <h5>Terület, kerület, felszín és térfogat számítások a megadott adatok alapján</h5>
-    <div class="container"></div>
-    <div class="row">
-    <div class="card p-2 col-lg-3 col-md-6">
-        <div class="card-header">
-        <h4 class="card-title">Háromszög</h4>
-        </div>
-        <img src="háromszög.svg" alt="háromszög" class="card-img-top kép1">
-        <div class="card-body">
-            <div class="háromszög kerülete">
-                <p>Adjon meg legalább három adatot</p>
-                <label for="a_oldal"><b>a</b> oldal</label>
-                <input class="adat" type="number" name="a_oldal" id="Háromszög_a"> <br>
-                <label for="b_oldal"><b>b</b> oldal</label>
-                <input class="adat" type="number" name="b_oldal" id="Háromszög_b"> <br>
-                <label for="c_oldal"><b>c</b> oldal</label>
-                <input class="adat" type="number" name="c_oldal" id="Háromszög_c"> <br>
-                <label for="α_szög"><b>α</b> szög</label>
-                <input class="adat" type="number" name="α_szög" id="Háromszög_α"> <br>
-                <label for="β_szög"><b>β</b> szög</label>
-                <input class="adat" type="number" name="β_szög" id="Háromszög_β"> <br>
-                <label for="γ_szög"><b>γ</b> szög</label>
-                <input class="adat" type="number" name="γ_szög" id="Háromszög_γ"> <br>
-                <label for="háromszög_K"><b>Kerület</b></label>
-                <input class="form-control" type="number" name="K" id="Háromszög_K" disabled>
-                <label for="háromszög_K"><b>Terület</b></label>
-                <input class="form-control" type="number" name="T" id="Háromszög_T" disabled>
-                <button type="button" class="btn btn-primary számolás" onclick="háromszög()">Számolás</button>
-                <button type="reset" class="btn btn-secondary törlés">Törlés</button>
+    <h1 class="text-primary">Számítások</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="card p-2 col-lg-3 col-md-6">
+                <div class="card-header">
+                    <h4 class="card-title">Háromszög</h4>
+                </div>
+                <img src="háromszög.svg" alt="háromszög" class="card-img-top kép1">
+                <div class="card-body">
+                    <div class="háromszög kerülete">
+                        <p>Adja meg az adatokat</p>
+                        <label for="a_oldal"><b>a</b> oldal</label>
+                        <input class="adat" type="number" name="a_oldal" id="Háromszög_a">
+                        <label for="b_oldal">cm</label> <br>
+                        <label for="b_oldal"><b>b</b> oldal</label>
+                        <input class="adat" type="number" name="b_oldal" id="Háromszög_b">
+                        <label for="b_oldal">cm</label> <br>
+                        <label for="c_oldal"><b>c</b> oldal</label>
+                        <input class="adat" type="number" name="c_oldal" id="Háromszög_c">
+                        <label for="b_oldal">cm</label> <br>
+                        <p for="Mértékegység_HÁ">Válassza ki az eredmények mértékegységét</p>
+                        <form>
+                            <select id="Mértékegység_HÁ" onchange="háromszögMértékegység()">
+                                <option value="mm">mm</option>
+                                <option value="cm" selected>cm</option>
+                                <option value="dm">dm</option>
+                                <option value="m">m</option>
+                            </select>
+                        </form> <br>
+                        <label for="háromszög_K"><b>Kerület</b></label> <br>
+                        <input class="eredmény" type="number" name="K" id="Háromszög_K" disabled>
+                        <label for="b_oldal"><p id="Mértékegység_HÁ_K">cm</p></label> <br>
+                        <label for="háromszög_K"><b>Terület</b></label><br>
+                        <input class="eredmény" type="number" name="T" id="Háromszög_T" disabled>
+                        <label for="b_oldal"><p id="Mértékegység_HÁ_T">cm<sup>2</sup></p></label> <br>
+                        <button type="button" class="btn btn-primary számolás" onclick="háromszög()">Számolás</button>
+                        <button type="reset" class="btn btn-secondary törlés">Törlés</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-2 col-lg-3 col-md-6">
+                <div class="card-header">
+                    <h4 class="card-title">Rombusz</h4>
+                </div>
+                <img src="rombusz.svg" alt="Rombusz" class="card-img-top">
+                <div class="card-body">
+                    <p>Adja meg az adatokat</p>
+                    <label for="a_oldal" class="plusz_hely"><b>a</b></label>
+                    <input class="adat" type="number" name="a_oldal" id="Rombusz_a">
+                    <label for="b_oldal">cm</label> <br>
+                    <label for="a_oldal"><b>m</b></label>
+                    <input class="adat" type="number" name="magasság" id="Rombusz_m">
+                    <label for="b_oldal">cm</label> <br>
+                    <p for="Mértékegység_R">Válassza ki az eredmények mértékegységét</p>
+                    <form>
+                        <select id="Mértékegység_R" onchange="rombuszMértékegység()">
+                            <option value="mm">mm</option>
+                            <option value="cm" selected>cm</option>
+                            <option value="dm">dm</option>
+                            <option value="m">m</option>
+                        </select>
+                    </form> <br>
+                    <label for="háromszög_K"><b>Kerület</b></label> <br>
+                    <input class="eredmény" type="number" name="K" id="Rombusz_K" disabled>
+                    <label for="b_oldal"><p id="Mértékegység_R_K">cm</p></label> <br>
+                    <label for="háromszög_K"><b>Terület</b></label> <br>
+                    <input class="eredmény" type="number" name="T" id="Rombusz_T" disabled>
+                    <label for="b_oldal" id="Mértékegység_R_T">cm<sup>2</sup></label> <br>
+                    <button type="button" class="btn btn-primary számolás" onclick="rombusz()">Számolás</button>
+                    <button type="reset" class="btn btn-secondary törlés">Törlés</button>
+                </div>
+            </div>
+            <div class="card p-2 col-lg-3 col-md-6">
+                <div class="card-header">
+                    <h4 class="card-title">Téglatest</h4>
+                </div>
+                <img src="téglatest.svg" alt="Téglatest" class="card-img-top">
+                <div class="card-body">
+                    <p>Adja meg az adatokat</p>
+                    <label for="a_oldal"><b>a</b> él</label>
+                    <input class="adat" type="number" name="a_él" id="Tégla_a">
+                    <label for="b_oldal">cm</label> <br>
+                    <label for="a_oldal"><b>b</b> él</label>
+                    <input class="adat" type="number" name="b_él" id="Tégla_b">
+                    <label for="b_oldal">cm</label> <br>
+                    <label for="a_oldal"><b>c</b> él</label>
+                    <input class="adat" type="number" name="c_él" id="Tégla_c">
+                    <label for="b_oldal">cm</label> <br>
+                    <p for="Mértékegység_R">Válassza ki az eredmények mértékegységét</p>
+                    <form>
+                    <select id="Mértékegység_T" onchange="téglatestMértékegység()">
+                        <option value="mm">mm </option>
+                        <option value="cm" selected>cm</option>
+                        <option value="dm">dm</option>
+                        <option value="m">m</option>
+                    </select>
+                    </form>
+                    <label for="háromszög_K"><b>Felszín</b></label> <br>
+                    <input class="eredmény" type="number" name="K" id="Tégla_A" disabled>
+                    <label for="b_oldal" id="Mértékegység_T_K">cm<sup>2</sup></label> <br>
+                    <label for="háromszög_K"><b>Térfogat</b></label> <br>
+                    <input class="eredmény" type="number" name="T" id="Tégla_V" disabled>
+                    <label for="b_oldal" id="Mértékegység_T_T">cm<sup>3</sup></label> <br>
+                    <button type="button" class="btn btn-primary számolás" onclick="téglatest()">Számolás</button>
+                    <button type="reset" class="btn btn-secondary törlés">Törlés</button>
+                </div>
+            </div>
+            <div class="card p-2 col-lg-3 col-md-6">
+                <div class="card-header">
+                    <h4 class="card-title">Henger</h4>
+                </div>
+                <img src="henger.svg" alt="Henger" class="card-img-top">
+                <div class="card-body">
+                    <p>Adja meg az adatokat</p>
+                    <label for="a_oldal" class="plusz_hely_r"><b>r</b></label>
+                    <input class="adat" type="number" name="sugár" id="Henger_r">
+                    <label for="b_oldal">cm</label> <br>
+                    <label for="a_oldal"><b>m</b></label>
+                    <input class="adat" type="number" name="magasság" id="Henger_m">
+                    <label for="b_oldal">cm</label> <br>
+                    <p for="Mértékegység_R">Válassza ki az eredmények mértékegységét</p>
+                    <form>
+                        <select id="Mértékegység_H" onchange="hengerMértékegység()">
+                            <option value="mm">mm</option>
+                            <option value="cm" selected>cm</option>
+                            <option value="dm">dm</option>
+                            <option value="m">m</option>
+                        </select>
+                    </form> <br>
+                    <label for="háromszög_K"><b>Felszín</b></label><br>
+                    <input class="eredmény" type="number" name="K" id="Henger_A" disabled>
+                    <label for="b_oldal" id="Mértékegység_H_K">cm<sup>2</sup></label> <br>
+                    <label for="háromszög_K"><b>Térfogat</b></label><br>
+                    <input class="eredmény" type="number" name="T" id="Henger_V" disabled>
+                    <label for="b_oldal" id="Mértékegység_H_T">cm<sup>3</sup></label> <br>
+                    <button type="button" class="btn btn-primary számolás" onclick="henger()">Számolás</button>
+                    <button type="reset" class="btn btn-secondary törlés">Törlés</button>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="card p-2 col-lg-3 col-md-6">
-        <div class="card-header">
-            <h4 class="card-title">Rombusz</h4>
-        </div>
-        <img src="rombusz.svg" alt="Rombusz" class="card-img-top">
-        <div class="card-body">
-            <p>Adja meg az adatokat</p>
-            <label for="a_oldal"><b>a</b> oldal</label>
-            <input class="adat" type="number" name="a_oldal" id="Rombusz_a"> <br>
-            <label for="a_oldal"><b>m</b></label>
-            <input class="adat" type="number" name="magasság" id="Rombusz_m"> <br>
-            <label for="háromszög_K"><b>Kerület</b></label>
-            <input class="form-control" type="number" name="K" id="Rombusz_K" disabled>
-            <label for="háromszög_K"><b>Terület</b></label>
-            <input class="form-control" type="number" name="T" id="Rombusz_T" disabled>
-            <button type="button" class="btn btn-primary számolás" onclick="rombusz()">Számolás</button>
-            <button type="reset" class="btn btn-secondary törlés">Törlés</button>
-        </div>
-    </div>
-    <div class="card p-2 col-lg-3 col-md-6">
-        <div class="card-header">
-            <h4 class="card-title">Téglatest</h4>
-        </div>
-        <img src="téglatest.svg" alt="Téglatest" class="card-img-top">
-        <div class="card-body">
-            <p>Adja meg az adatokat</p>
-            <label for="a_oldal"><b>a</b> él</label>
-            <input class="adat" type="number" name="a_él" id="Tégla_a"> <br>
-            <label for="a_oldal"><b>b</b> él</label>
-            <input class="adat" type="number" name="b_él" id="Tégla_b"> <br>
-            <label for="a_oldal"><b>c</b> él</label>
-            <input class="adat" type="number" name="c_él" id="Tégla_c"> <br>
-            <label for="háromszög_K"><b>Felszín</b></label>
-            <input class="form-control" type="number" name="K" id="Tégla_A" disabled>
-            <label for="háromszög_K"><b>Térfogat</b></label>
-            <input class="form-control" type="number" name="T" id="Tégla_V" disabled>
-            <button type="button" class="btn btn-primary számolás" onclick="téglatest()">Számolás</button>
-            <button type="reset" class="btn btn-secondary törlés">Törlés</button>
-        </div>
-    </div>
-    <div class="card p-2 col-lg-3 col-md-6">
-        <div class="card-header">
-            <h4 class="card-title">Henger</h4>
-        </div>
-        <img src="henger.svg" alt="Henger" class="card-img-top">
-        <div class="card-body">
-            <p>Adja meg az adatokat</p>
-            <label for="a_oldal"><b>r</b> sugár</label>
-            <input class="adat" type="number" name="sugár" id="Henger_r"> <br>
-            <label for="a_oldal"><b>m</b> magasság</label>
-            <input class="adat" type="number" name="magasság" id="Henger_m"> <br>
-            <label for="háromszög_K"><b>Felszín</b></label>
-            <input class="form-control" type="number" name="K" id="Henger_A" disabled>
-            <label for="háromszög_K"><b>Térfogat</b></label>
-            <input class="form-control" type="number" name="T" id="Henger_V" disabled>
-            <button type="button" class="btn btn-primary számolás" onclick="henger()">Számolás</button>
-            <button type="reset" class="btn btn-secondary törlés">Törlés</button>
-        </div>
-    </div>
-
 
 </body>
 

@@ -1,43 +1,51 @@
-body{
-    background-color: rgb(65, 65, 65);
+body {
+  background-color: rgb(65, 65, 65);
 }
-card {
+.card {
   margin-top: 50px;
-  margin-right: 30px;
   background-color: rgb(160, 157, 157, 0.768);
   border: 3px solid black;
 }
-.card-img{
-    max-width: 150px;
+.card:hover {
+  background-color: rgba(160, 157, 157);
 }
-.card:hover{
-    background-color: rgba(160, 157, 157);
+.card-title {
+  text-align: center;
 }
-.card-title{
-    text-align: center;
+.számolás {
+  float: right;
+  margin-top: 15px;
 }
-.számolás{
-    float: right;
-    margin-top: 15px;
+.törlés {
+  margin-top: 15px;
 }
-.törlés{
-    margin-top: 15px;
+.input [type="number"] {
+  margin-right: 50px;
+  background-color: rgb(204, 204, 204);
 }
-.input [type="number"]{
-    margin-right: 50px;
-    background-color: rgb(204, 204, 204);
+.adat {
+  background-color: rgb(204, 204, 204);
+  border: 1px solid black;
 }
-.adat{
-    background-color: rgb(204, 204, 204);
-    border: 1px solid black;
+h1 {
+  margin-top: 35px;
+  text-align: center;
 }
-h1{
-    margin-top: 25px;
-    text-align: center;
-    color: rgba(160, 157, 157);
+h5 {
+  color: rgba(160, 157, 157);
+  margin-left: 50px;
+  margin-top: 25px;
 }
-h5{
-    color: rgba(160, 157, 157);
-    margin-left: 50px;
-    margin-top: 25px;
+select {
+  width: 20%;
+}
+.eredmény {
+  width: 75%;
+  border-radius: 4px;
+}
+.plusz_hely {
+  margin-right: 5px;
+}
+.plusz_hely_r {
+  margin-right: 7px;
 }
