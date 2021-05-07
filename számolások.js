@@ -83,38 +83,49 @@ function háromszög() {
 function rombusz() {
     var a = parseInt(document.getElementById("Rombusz_a").value);
     var m = parseInt(document.getElementById("Rombusz_m").value);
-    if (a <= 0 || m <= 0) {
-        alert("Egyik érték sem lehet negatív szám vagy nulla")
+    if (isNaN(a) || isNaN(m)) {
+        alert("Nem adott meg elég értéket!")
     } else {
-        var K_eredmény = 4 * a
-        var T_eredmény = a * m
-        document.getElementById("Rombusz_K").value = K_eredmény.toFixed(2);
-        document.getElementById("Rombusz_T").value = T_eredmény.toFixed(2);
+        if (a <= 0 || m <= 0) {
+            alert("Egyik érték sem lehet negatív szám vagy nulla")
+        } else {
+            var K_eredmény = 4 * a
+            var T_eredmény = a * m
+            document.getElementById("Rombusz_K").value = K_eredmény.toFixed(2);
+            document.getElementById("Rombusz_T").value = T_eredmény.toFixed(2);
+        }
     }
 }
 function téglatest() {
     var a = parseInt(document.getElementById("Tégla_a").value);
     var b = parseInt(document.getElementById("Tégla_b").value);
     var c = parseInt(document.getElementById("Tégla_c").value);
-    if (a <= 0 || b <= 0 || c <= 0) {
-        alert("Egyik érték sem lehet negatív szám vagy nulla")
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        alert("Nem adott meg elég értéket!")
     } else {
-        var A_eredmény = 2 * (a * b + a * c + b * c)
-        var V_eredmény = a * b * c
-        document.getElementById("Tégla_A").value = A_eredmény.toFixed(2);
-        document.getElementById("Tégla_V").value = V_eredmény.toFixed(2);
+        if (a <= 0 || b <= 0 || c <= 0) {
+            alert("Egyik érték sem lehet negatív szám vagy nulla")
+        } else {
+            var A_eredmény = 2 * (a * b + a * c + b * c)
+            var V_eredmény = a * b * c
+            document.getElementById("Tégla_A").value = A_eredmény.toFixed(2);
+            document.getElementById("Tégla_V").value = V_eredmény.toFixed(2);
+        }
     }
 }
 function henger() {
     var r = parseInt(document.getElementById("Henger_r").value);
     var m = parseInt(document.getElementById("Henger_m").value);
-    if (r <= 0 || m <= 0) {
-        alert("Egyik érték sem lehet negatív szám vagy nulla")
+    if (isNaN(r) || isNaN(m)) {
+        alert("Nem adott meg elég értéket!")
     } else {
-        var V_eredmény = Math.PI * m * r * r
-        var A_eredmény = 2 * Math.PI * r  * (r + m)
-        document.getElementById("Henger_A").value = A_eredmény.toFixed(2);
-        document.getElementById("Henger_V").value = V_eredmény.toFixed(2);
+        if (r <= 0 || m <= 0) {
+            alert("Egyik érték sem lehet negatív szám vagy nulla")
+        } else {
+            var V_eredmény = Math.PI * m * r * r
+            var A_eredmény = 2 * Math.PI * r * (r + m)
+            document.getElementById("Henger_A").value = A_eredmény.toFixed(2);
+            document.getElementById("Henger_V").value = V_eredmény.toFixed(2);
+        }
     }
-
 }
