@@ -10,8 +10,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="számolások.js"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="számolások.js"></script>
 </head>
 
 <body>
@@ -26,6 +26,7 @@
                 <div class="card-body">
                     <div class="háromszög kerülete">
                         <p>Adja meg az adatokat</p>
+                        <form id="card1">
                         <label for="a_oldal"><b>a</b> oldal</label>
                         <input class="adat" type="number" name="a_oldal" id="Háromszög_a">
                         <label for="b_oldal">cm</label> <br>
@@ -35,9 +36,9 @@
                         <label for="c_oldal"><b>c</b> oldal</label>
                         <input class="adat" type="number" name="c_oldal" id="Háromszög_c">
                         <label for="b_oldal">cm</label> <br>
-                        <p for="Mértékegység_HÁ">Válassza ki az eredmények mértékegységét</p>
-                        <form>
-                            <select id="Mértékegység_HÁ" onchange="háromszögMértékegység()">
+                        <label for="Mértékegység_HÁ">Válassza ki az eredmények mértékegységét</label>
+                        <form class="">
+                            <select id="Mértékegység_HÁ" onchange="szamolva_HÁ()">
                                 <option value="mm">mm</option>
                                 <option value="cm" selected>cm</option>
                                 <option value="dm">dm</option>
@@ -50,8 +51,9 @@
                         <label for="háromszög_K"><b>Terület</b></label><br>
                         <input class="eredmény" type="number" name="T" id="Háromszög_T" disabled>
                         <label for="b_oldal"><p id="Mértékegység_HÁ_T">cm<sup>2</sup></p></label> <br>
-                        <button type="button" class="btn btn-primary számolás" onclick="háromszög()">Számolás</button>
-                        <button type="reset" class="btn btn-secondary törlés">Törlés</button>
+                        <button type="reset" class="btn btn-secondary törlés" onclick="reset_HÁ()">Törlés</button>
+                        <button type="button" class="btn btn-primary számolás" onclick="háromszög()">Számolás</button><br>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -63,6 +65,7 @@
                 <img src="rombusz.svg" alt="Rombusz" class="card-img-top">
                 <div class="card-body">
                     <p>Adja meg az adatokat</p>
+                    <form id="card2">
                     <label for="a_oldal" class="plusz_hely"><b>a</b></label>
                     <input class="adat" type="number" name="a_oldal" id="Rombusz_a">
                     <label for="b_oldal">cm</label> <br>
@@ -71,7 +74,7 @@
                     <label for="b_oldal">cm</label> <br>
                     <p for="Mértékegység_R">Válassza ki az eredmények mértékegységét</p>
                     <form>
-                        <select id="Mértékegység_R" onchange="rombuszMértékegység()">
+                        <select id="Mértékegység_R" onchange="szamolva_R()">
                             <option value="mm">mm</option>
                             <option value="cm" selected>cm</option>
                             <option value="dm">dm</option>
@@ -85,7 +88,8 @@
                     <input class="eredmény" type="number" name="T" id="Rombusz_T" disabled>
                     <label for="b_oldal" id="Mértékegység_R_T">cm<sup>2</sup></label> <br>
                     <button type="button" class="btn btn-primary számolás" onclick="rombusz()">Számolás</button>
-                    <button type="reset" class="btn btn-secondary törlés">Törlés</button>
+                    <button type="reset" class="btn btn-secondary törlés" onclick="reset_R()">Törlés</button>
+                    </form>
                 </div>
             </div>
             <div class="card p-2 col-lg-3 col-md-6">
@@ -95,6 +99,7 @@
                 <img src="téglatest.svg" alt="Téglatest" class="card-img-top">
                 <div class="card-body">
                     <p>Adja meg az adatokat</p>
+                    <form id="card3">
                     <label for="a_oldal"><b>a</b> él</label>
                     <input class="adat" type="number" name="a_él" id="Tégla_a">
                     <label for="b_oldal">cm</label> <br>
@@ -106,7 +111,7 @@
                     <label for="b_oldal">cm</label> <br>
                     <p for="Mértékegység_R">Válassza ki az eredmények mértékegységét</p>
                     <form>
-                    <select id="Mértékegység_T" onchange="téglatestMértékegység()">
+                    <select id="Mértékegység_T" onchange="szamolva_T()">
                         <option value="mm">mm </option>
                         <option value="cm" selected>cm</option>
                         <option value="dm">dm</option>
@@ -120,7 +125,8 @@
                     <input class="eredmény" type="number" name="T" id="Tégla_V" disabled>
                     <label for="b_oldal" id="Mértékegység_T_T">cm<sup>3</sup></label> <br>
                     <button type="button" class="btn btn-primary számolás" onclick="téglatest()">Számolás</button>
-                    <button type="reset" class="btn btn-secondary törlés">Törlés</button>
+                    <button type="reset" class="btn btn-secondary törlés"  onclick="reset_T()">Törlés</button>
+                    </form>
                 </div>
             </div>
             <div class="card p-2 col-lg-3 col-md-6">
@@ -130,6 +136,7 @@
                 <img src="henger.svg" alt="Henger" class="card-img-top">
                 <div class="card-body">
                     <p>Adja meg az adatokat</p>
+                    <form id="card4">
                     <label for="a_oldal" class="plusz_hely_r"><b>r</b></label>
                     <input class="adat" type="number" name="sugár" id="Henger_r">
                     <label for="b_oldal">cm</label> <br>
@@ -138,7 +145,7 @@
                     <label for="b_oldal">cm</label> <br>
                     <p for="Mértékegység_R">Válassza ki az eredmények mértékegységét</p>
                     <form>
-                        <select id="Mértékegység_H" onchange="hengerMértékegység()">
+                        <select id="Mértékegység_H" onchange="szamolva_H()">
                             <option value="mm">mm</option>
                             <option value="cm" selected>cm</option>
                             <option value="dm">dm</option>
@@ -152,7 +159,8 @@
                     <input class="eredmény" type="number" name="T" id="Henger_V" disabled>
                     <label for="b_oldal" id="Mértékegység_H_T">cm<sup>3</sup></label> <br>
                     <button type="button" class="btn btn-primary számolás" onclick="henger()">Számolás</button>
-                    <button type="reset" class="btn btn-secondary törlés">Törlés</button>
+                    <button type="reset" class="btn btn-secondary törlés" onclick="reset_H()">Törlés</button>
+                    </form>
                 </div>
             </div>
         </div>
